@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,300,700,500|Lato:400,300,700,900');
+@import 'fonts';
+@import 'header';
+@import 'nav';
+
+$body-background:   #f7f7f7;
+
+body {
+  background-color: $body-background;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 1200px ) {
+  .container {
+    width: 1170px;
+  }
+
+}
+
+
+
+
+
+

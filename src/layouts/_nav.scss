@@ -1,0 +1,10 @@
+Nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+a.nav {
+  border-bottom: 2px solid $nav-color;
+}
