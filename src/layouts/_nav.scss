@@ -1,10 +1,23 @@
-Nav {
+.nav-list {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+  list-style: none;
+}
+
+.nav-item {
+  margin-right: 30px;
+
+  &--last {
+    margin-right: 0px;
+  }
 }
 
 a.nav {
   border-bottom: 2px solid $nav-color;
+  padding-bottom: 2px;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
+

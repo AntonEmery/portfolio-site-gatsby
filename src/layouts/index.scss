@@ -4,9 +4,12 @@
 @import 'nav';
 
 $body-background:   #f7f7f7;
+$body-color:         #3b3b3b;
 
 body {
   background-color: $body-background;
+  margin-top: 30px;
+  color: $body-color;
 }
 
 .container {

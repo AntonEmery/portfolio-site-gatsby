@@ -1,6 +1,7 @@
 $font-stack:							'Roboto', sans-serif;
 $header-font-stack:				'Lato', sans-serif;
 $nav-color:								#848484;
+$header-color:						#3b3b3b;
 
 body {
   font-family: $font-stack;
@@ -8,15 +9,21 @@ body {
 	text-rendering: optimizeLegibility;
 	font-size: 16px;
 	line-height: 25px;
-	color: #3b3b3b;
+	color: $header-color;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: $header-font-stack;
+	color: $header-color;
+}
+
+h2 {
+	font-size: 30px;
 }
 
 a {
 	font-family: $font-stack;
+	color: $header-color;
 }
 
 a, a:hover, a:focus, a:active, input, button, textarea {
@@ -30,4 +37,14 @@ a, a:hover, a:focus, a:active {
 ul {
 	margin: 0;
 	padding: 0;
+}
+
+.page-title {
+	font-size: 74px;
+	line-height: 80px;
+	font-weight: 900;
+}
+
+.sub-title {
+
 }
