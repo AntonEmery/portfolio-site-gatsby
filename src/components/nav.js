@@ -3,10 +3,10 @@ import Link from 'gatsby-link'
 
 const Nav = () => (
   <nav>
-    <a className="nav">Home</a>
-    <a className="nav">Contact</a>
-    <a className="nav">Resume</a>
-    <a className="nav">About</a>
+    <Link to="#" className="nav">Home</Link>
+    <Link to="#" className="nav">Contact</Link>
+    <Link to="#" className="nav">Resume</Link>
+    <Link to="/about" className="nav">About</Link>
   </nav>
 )
 
