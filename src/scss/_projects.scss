@@ -8,14 +8,35 @@
 .project {
   flex-basis: 30%;
   position: relative;
+  opacity: 1;
+  transition: all 0.3s ease 0.1s;
+
+
+  &:hover:after {
+    opacity: .8;
+    transition: all 0.3s ease-in-out 0.25s;
+  }
 
   &:hover {
-    opacity: .5;
-
-    h5 {
+    h5, p {
       opacity: 1;
+      transition: all 0.3s ease 0.2s;
+      transform: translateY(60%);
+      z-index: 3;
     }
   }
+}
+
+.project:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  transition: all 0.3s ease 0.1s;
+  background-color: rgba(255, 255, 255, 0.8);
+  opacity: 0;
 }
 
 .project-description {
@@ -23,11 +44,10 @@
   top: 30%;
   left: 40%;
   transform: translate(-50%, -50%);
+  z-index: 2;
 
-  h5 {
+  h5, p {
     opacity: 0;
+    transition: all 0.3s ease 0.1s;
   }
-
-
-
 }
