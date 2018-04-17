@@ -1,10 +1,16 @@
+$body-background:    #f7f7f7;
+$body-color:         #3b3b3b;
+$font-stack:         'Roboto', sans-serif;
+$header-font-stack:  'Lato', sans-serif;
+$nav-color:         #848484;
+$header-color:       #3b3b3b;
+
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,300,700,500|Lato:400,300,700,900');
 @import 'fonts';
 @import 'header';
 @import 'nav';
+@import 'projects';
 
-$body-background:   #f7f7f7;
-$body-color:         #3b3b3b;
 
 body {
   background-color: $body-background;
@@ -14,6 +20,15 @@ body {
 
 .container {
   margin: 0 auto;
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+
+  &--project {
+    height: 252px;
+  }
 }
 
 @media only screen and (min-width: 1200px ) {
