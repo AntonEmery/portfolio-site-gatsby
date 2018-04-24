@@ -1,20 +1,21 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import { NavLink } from 'react-router-dom';
 
 const Nav = () => (
   <nav>
     <ul className="nav-list">
       <li className="nav-item">
-        <Link to="#" className="nav">HOME</Link>
+        <NavLink activeClassName="nav--is-active" to="/" className="nav">HOME</NavLink>
       </li>
       <li className="nav-item">
-        <Link to="#" className="nav">ABOUT</Link>
+        <NavLink to="#" className="nav">ABOUT</NavLink>
       </li>
       <li className="nav-item">
-        <Link to="#" className="nav">CONTACT</Link>
+        <NavLink to="#" className="nav">CONTACT</NavLink>
       </li>
       <li className="nav-item nav-item--last">
-        <Link to="#" className="nav">RESUME</Link>
+        <NavLink to="#" className="nav">RESUME</NavLink>
       </li>
     </ul>
   </nav>

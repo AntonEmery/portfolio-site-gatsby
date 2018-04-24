@@ -38,6 +38,11 @@ a, a:hover, a:focus, a:active {
 	text-decoration: none;
 }
 
+.project-text {
+	color: $header-color;
+	text-transform: uppercase;
+}
+
 ul {
 	margin: 0;
 	padding: 0;
@@ -47,8 +52,4 @@ ul {
 	font-size: 74px;
 	line-height: 80px;
 	font-weight: 900;
-}
-
-.sub-title {
-
 }

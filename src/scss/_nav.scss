@@ -21,3 +21,8 @@ a.nav {
   letter-spacing: 1px;
 }
 
+a.nav--is-active {
+  border-bottom: 3px solid $active-color;
+  color: $active-color;
+}
+
