@@ -25,8 +25,8 @@
     ).then(result => {
       result.data.allWordpressWpPortfolioItem.edges.forEach(({node}) => {
         createPage({
-          path: `product-details/${node.is}`,
-          component: path.resolve(`./src/templates/project-details.js`),
+          path: `product/${node.wordpress_id}`,
+          component: path.resolve(`./src/templates/project-detail.js`),
           context: {
             projectId: node.wordpress_id
           },

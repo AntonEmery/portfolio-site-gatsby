@@ -11,6 +11,7 @@ const IndexPage = props => {
       title={project.node.title}
       tagline={project.node.acf.tagline}
       imageUrl={project.node.acf.imageurl.source_url}
+      id={project.node.wordpress_id}
     />
   })
   return (

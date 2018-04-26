@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Link from 'gatsby-link'
 
 
-class ProjectDetails extends Component {
+class ProjectDetail extends Component {
   render() {
     return (
       <p>Project Details</p>
@@ -10,4 +10,4 @@ class ProjectDetails extends Component {
   }
 }
 
-export default ProjectDetails;
+export default ProjectDetail;
