@@ -5,3 +5,38 @@
  */
 
  // You can delete this file if you're not using it
+
+ const path = require('path');
+
+ exports.sourceNodes = async ({ boundActionCreators }) => {....};
+
+ exports.createPages = ({graphql, boundActionCreators}) => {
+   const { createPage } = boundActionCreators
+   return new Promise((resolve, reject) => {
+     graphql(`
+     allWordpressWpPortfolioItem {
+      edges {
+       node {
+        wordpress_id
+       }
+      }
+    }
+     `
+    ).then(result => {
+      result.data.allWordpressWpPortfolioItem.edges.forEach(({node}) => {
+        createPage({
+          path: `product-details/${node.is}`,
+          component: path.resolve(`./src/templates/project-details.js`),
+          context: {
+            projectId: node.wordpress_id
+          },
+        })
+      })
+      resolve()
+    })
+   }).catch(error => {
+     console.log(error)
+     reject()
+   })
+ };
+
