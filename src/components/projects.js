@@ -24,5 +24,47 @@ class Projects extends React.Component {
 
 export default Projects;
 
+export const websiteQuery = graphql`
+{
+  allWordpressWpPortfolioItem {
+    edges {
+     node {
+      wordpress_id
+      title
+      content
+      acf {
+        livelink
+        tagline
+        imageurl {
+          source_url
+        }
+      }
+      }
+    }
+  }
+}`
+
+export const webappQuery = graphql`
+{
+	allWordpressWpWebapp{
+    edges{
+     node{
+      wordpress_id
+      title
+      content
+      acf {
+        githublink
+        livelink
+        tagline
+        imageurl {
+          source_url
+        }
+      }
+    }
+  }
+  }
+}`
+
+
 
 
