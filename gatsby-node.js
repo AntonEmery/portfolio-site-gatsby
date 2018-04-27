@@ -8,12 +8,12 @@
 
  const path = require('path');
 
- exports.sourceNodes = async ({ boundActionCreators }) => {....};
 
  exports.createPages = ({graphql, boundActionCreators}) => {
    const { createPage } = boundActionCreators
    return new Promise((resolve, reject) => {
      graphql(`
+     query PortfolioItem {
      allWordpressWpPortfolioItem {
       edges {
        node {
@@ -21,11 +21,12 @@
        }
       }
     }
-     `
-    ).then(result => {
-      result.data.allWordpressWpPortfolioItem.edges.forEach(({node}) => {
+  }
+    `
+  ).then(result => {
+      result.data.allWordpressWpPortfolioItem.edges.forEach(({ node }) => {
         createPage({
-          path: `product/${node.wordpress_id}`,
+          path: `project/${node.wordpress_id}`,
           component: path.resolve(`./src/templates/project-detail.js`),
           context: {
             projectId: node.wordpress_id
