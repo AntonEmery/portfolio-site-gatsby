@@ -21,6 +21,11 @@ h2 {
 	font-size: 30px;
 }
 
+p {
+	font-weight: $body-font-weight;
+	font-size: $body-font-size;
+}
+
 a, p {
 	font-family: $font-stack;
 	color: $nav-color;

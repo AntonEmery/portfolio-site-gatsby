@@ -5,12 +5,15 @@ $header-font-stack:  'Lato', sans-serif;
 $nav-color:         #848484;
 $active-color:       #0ADCD5;
 $header-color:       #3b3b3b;
+$body-font-weight:    300;
+$body-font-size:      18px;
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,300,700,500|Lato:400,300,700,900');
 @import 'fonts';
 @import 'header';
 @import 'nav';
 @import 'projects';
+@import 'project-details';
 
 
 body {
@@ -26,6 +29,7 @@ body {
 .img-responsive {
   display: block;
   max-width: 100%;
+  height: auto;
 
   &--project {
     height: 252px;

@@ -1,0 +1,10 @@
+.project-details {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+  div {
+    flex-basis: 45%;
+  }
+}
