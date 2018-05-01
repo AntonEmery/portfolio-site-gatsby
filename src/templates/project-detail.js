@@ -4,9 +4,16 @@ import Link from 'gatsby-link'
 
 class ProjectDetail extends Component {
   render() {
-    console.log(this.props)
+    const { title, content, acf } = this.props.data.wordpressWpPortfolioItem
     return (
-      <p>Project Details</p>
+      <div>
+        <p>Project Details</p>
+        <p>{title}</p>
+        <p>{acf.description}</p>
+        <p>Technologies Used: {acf.tagline}</p>
+        <a href={acf.livelink} target="_blank">Live Project</a>
+        <img src={acf.imageurl.source_url} alt="project screen shot"/>
+      </div>
     );
   }
 }
@@ -17,6 +24,14 @@ export const query = graphql`
   query ProjectDetails($projectId: Int!) {
     wordpressWpPortfolioItem (wordpress_id: { eq: $projectId }) {
       title
+      acf {
+        tagline
+        description
+        livelink
+        imageurl {
+          source_url
+        }
+      }
     }
   }
 `
