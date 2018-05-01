@@ -12,7 +12,9 @@ class ProjectDetail extends Component {
           <p>{title}</p>
           <p>{acf.description}</p>
           <p>Technologies Used: {acf.tagline}</p>
-          <a href={acf.livelink} target="_blank">Live Project</a>
+          {acf.livelink
+          ? <a href={acf.livelink} target="_blank">Live Project</a>
+          : ''}
         </div>
         <div>
           <img className="img-responsive" src={acf.imageurl.source_url} alt="project screen shot"/>
