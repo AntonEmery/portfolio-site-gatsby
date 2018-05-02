@@ -21,13 +21,23 @@ h2 {
 	font-size: 30px;
 }
 
+h3 {
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 1.1;
+}
+
 p {
 	font-weight: $body-font-weight;
 	font-size: $body-font-size;
+	color: $paragraph-color;
 }
 
 a, p {
 	font-family: $font-stack;
+}
+
+a {
 	color: $nav-color;
 }
 

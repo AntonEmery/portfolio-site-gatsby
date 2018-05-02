@@ -1,5 +1,6 @@
 $body-background:    #f7f7f7;
 $body-color:         #3b3b3b;
+$paragraph-color:    #747474;
 $font-stack:         'Roboto', sans-serif;
 $header-font-stack:  'Lato', sans-serif;
 $nav-color:         #848484;
@@ -34,6 +35,10 @@ body {
   &--project {
     height: 252px;
   }
+}
+
+.text-bold {
+  font-weight: bold;
 }
 
 @media only screen and (min-width: 1200px ) {

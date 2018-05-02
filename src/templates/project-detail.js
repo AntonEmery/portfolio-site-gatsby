@@ -8,10 +8,9 @@ class ProjectDetail extends Component {
     return (
       <div className="project-details">
         <div>
-          <p>Project Details</p>
-          <p>{title}</p>
+          <h3>{title}</h3>
           <p>{acf.description}</p>
-          <p>Technologies Used: {acf.tagline}</p>
+          <p><span className="text-bold">Technologies Used:</span> {acf.tagline}</p>
           <a href={acf.livelink} target="_blank">Live Project</a>
           { acf.github
             ? <a href={acf.github} target="_blank">Github Repo</a>
