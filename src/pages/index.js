@@ -3,7 +3,6 @@ import Link from 'gatsby-link'
 import Projects from '../components/projects'
 
 const IndexPage = props => {
-  console.log(props)
   const webProjects = props.data.allWordpressWpPortfolioItem.edges;
   const test = webProjects.map((project, index) => {
     return <Projects

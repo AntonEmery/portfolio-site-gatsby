@@ -12,9 +12,11 @@ class ProjectDetail extends Component {
           <p>{title}</p>
           <p>{acf.description}</p>
           <p>Technologies Used: {acf.tagline}</p>
-          {acf.livelink
-          ? <a href={acf.livelink} target="_blank">Live Project</a>
-          : ''}
+          <a href={acf.livelink} target="_blank">Live Project</a>
+          { acf.github
+            ? <a href={acf.github} target="_blank">Github Repo</a>
+            : ''
+          }
         </div>
         <div>
           <img className="img-responsive" src={acf.imageurl.source_url} alt="project screen shot"/>
@@ -31,6 +33,7 @@ export const query = graphql`
     wordpressWpPortfolioItem (wordpress_id: { eq: $projectId }) {
       title
       acf {
+        github
         tagline
         description
         livelink
