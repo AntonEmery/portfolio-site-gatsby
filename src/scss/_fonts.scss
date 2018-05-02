@@ -27,6 +27,7 @@ h3 {
 	line-height: 1.1;
 }
 
+
 p {
 	font-weight: $body-font-weight;
 	font-size: $body-font-size;
@@ -51,11 +52,6 @@ a, a:hover, a:focus, a:active, input, button, textarea {
 
 a, a:hover, a:focus, a:active {
 	text-decoration: none;
-}
-
-.project-text {
-	color: $header-color;
-	text-transform: uppercase;
 }
 
 ul {

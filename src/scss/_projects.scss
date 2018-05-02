@@ -10,6 +10,7 @@
   position: relative;
   opacity: 1;
   transition: all 0.3s ease 0.1s;
+  margin-bottom: 2%;
 
   &:hover:after {
     opacity: .9;
@@ -34,7 +35,7 @@
   left: 0;
   bottom: 0;
   transition: all 0.3s ease 0.1s;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
   opacity: 0;
 }
 
@@ -49,4 +50,18 @@
     opacity: 0;
     transition: all 0.3s ease 0.1s;
   }
+}
+
+.project-title {
+	color: $header-color;
+	text-transform: uppercase;
+	font-weight: 700;
+  word-spacing: 3px;
+  font-size: 18px;
+  margin-bottom: 10px
+}
+
+.project-tagline {
+  font-weight: 500;
+  margin-top: 10px;
 }
