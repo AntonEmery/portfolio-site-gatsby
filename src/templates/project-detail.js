@@ -11,9 +11,9 @@ class ProjectDetail extends Component {
           <h3>{title}</h3>
           <p>{acf.description}</p>
           <p><span className="text-bold">Technologies Used:</span> {acf.tagline}</p>
-          <a href={acf.livelink} target="_blank">Live Project</a>
+          <a href={acf.livelink} target="_blank"><button className="project-button">Live Project</button></a>
           { acf.github
-            ? <a href={acf.github} target="_blank">Github Repo</a>
+            ? <a href={acf.github} target="_blank"><button className="project-button">Github Repo</button></a>
             : ''
           }
         </div>
