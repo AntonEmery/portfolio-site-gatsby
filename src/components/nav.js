@@ -9,13 +9,13 @@ const Nav = () => (
         <NavLink activeClassName="nav--is-active" to="/" className="nav">HOME</NavLink>
       </li>
       <li className="nav-item">
-        <NavLink to="#" className="nav">ABOUT</NavLink>
+        <NavLink activeClassName="nav--is-active" to="/about" className="nav">ABOUT</NavLink>
       </li>
       <li className="nav-item">
-        <NavLink to="#" className="nav">CONTACT</NavLink>
+        <NavLink activeClassName="nav--is-active" to="#" className="nav">CONTACT</NavLink>
       </li>
       <li className="nav-item nav-item--last">
-        <NavLink to="#" className="nav">RESUME</NavLink>
+        <NavLink activeClassName="nav--is-active" to="#" className="nav">RESUME</NavLink>
       </li>
     </ul>
   </nav>
