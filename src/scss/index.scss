@@ -4,7 +4,7 @@ $paragraph-color:    #747474;
 $font-stack:         'Roboto', sans-serif;
 $header-font-stack:  'Lato', sans-serif;
 $nav-color:         #848484;
-$active-color:       #0ADCD5;
+$active-color:       #33a1cc;
 $header-color:       #3b3b3b;
 $body-font-weight:    300;
 $body-font-size:      18px;
@@ -17,6 +17,7 @@ $body-font-size:      18px;
 @import 'project-details';
 @import 'skills';
 @import 'footer';
+@import 'contact';
 
 
 body {

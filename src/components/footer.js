@@ -22,7 +22,7 @@ const Footer = () => (
         <FaEnvelope />
       </a>
     </div>
-    <p className="gatsby">Built with &hearts; using <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby.js</a></p>
+    <p className="gatsby">Built with &hearts; using <a href="https://www.gatsbyjs.org/" target="_blank" className="text-link">Gatsby.js</a></p>
   </footer>
 )
 

@@ -12,7 +12,7 @@ class About extends Component {
 
       <p>Outside of programming my two main passions are Brazilian Jujitsu and playing music. Much like programming, the learning never really stops with these two activities. I train at Renzo Gracie Portland and Portland Judo. To me, grappling is a way to exercise my mind and body, and be part of a larger community. Some of my best friends have been made through training.</p>
 
-      <p>Music is also a big part of my life, I play irish and old time music on guitar, banjo, and flute. I released a solo cd in 2010, play a lot of music with friends, and perform occasionally at house concerts and other events around the Northwest.</p>
+      <p>I play irish and old time music on guitar, banjo, and flute. I released a <a href="http://www.celticfingerstyleguitar.com" target="_blank" className="text-link">solo cd</a> in 2010, play a lot of music with friends, and perform occasionally at house concerts and other events around the Northwest.</p>
 
       <p>Since 2006 I have been a lucky resident of Portland. The culture of coffee shops, food, music, and activities is a perfect fit.</p>
       </div>
