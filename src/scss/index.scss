@@ -16,6 +16,7 @@ $body-font-size:      18px;
 @import 'projects';
 @import 'project-details';
 @import 'skills';
+@import 'footer';
 
 
 body {
@@ -36,6 +37,11 @@ body {
   &--project {
     height: 252px;
   }
+}
+
+.about-image {
+  float: left;
+  margin-right: 1%;
 }
 
 .text-bold {
