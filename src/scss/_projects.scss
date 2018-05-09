@@ -65,3 +65,15 @@
   font-weight: 500;
   margin-top: 10px;
 }
+
+@media screen and (max-width: 900px) {
+  .project {
+    flex-basis: 45%;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .projects-container {
+    flex-direction: column;
+  }
+}

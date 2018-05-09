@@ -12,10 +12,10 @@ const Nav = () => (
         <NavLink activeClassName="nav--is-active" to="/about" className="nav">ABOUT</NavLink>
       </li>
       <li className="nav-item">
-        <NavLink activeClassName="nav--is-active" to="#" className="nav">CONTACT</NavLink>
+        <NavLink activeClassName="nav--is-active" to="/contact" className="nav">CONTACT</NavLink>
       </li>
       <li className="nav-item nav-item--last">
-        <NavLink activeClassName="nav--is-active" to="#" className="nav">RESUME</NavLink>
+        <NavLink activeClassName="nav--is-active" to="http://antonemery.com/antonemeryresume.pdf" target="_blank" className="nav">RESUME</NavLink>
       </li>
     </ul>
   </nav>

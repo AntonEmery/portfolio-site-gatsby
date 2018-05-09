@@ -1,9 +1,13 @@
-footer {
+.gatsby {
+  text-align: right;
+}
+
+.social {
   font-size: 3em;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 .social-link {
@@ -12,4 +16,14 @@ footer {
 
 .social-link:last-child {
   margin-right: 0;
+}
+
+@media screen and (max-width: 590px) {
+  .social {
+    justify-content: center;
+  }
+
+  .gatsby {
+    text-align: center;
+  }
 }
