@@ -1,0 +1,10 @@
+.about-image {
+  float: left;
+  margin-right: 1%;
+}
+
+@media screen and (max-width: 450px) {
+  .about-image {
+    float: none;
+  }
+}
