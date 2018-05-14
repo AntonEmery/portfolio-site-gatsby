@@ -11,7 +11,7 @@ const Header = ({ siteTitle }) => (
     >
     <Nav />
       <h1 className="page-title"><Link to="/" className="header-link" style={{textDecoration: 'none'}}>Anton Emery</Link></h1>
-      <h2 className="sub-title"><Link to="/" className="header-link" style={{textDecoration: 'none'}}>Web Developer - Portland, OR</Link></h2>
+      <h2 className="sub-title"><Link to="/" className="header-link" style={{textDecoration: 'none'}}>Web Developer</Link></h2>
     </div>
   </div>
 )

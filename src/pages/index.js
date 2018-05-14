@@ -17,7 +17,9 @@ const IndexPage = props => {
   })
   return (
   <div>
-    <p>Lorem ipsum dolor amet activated charcoal hella hexagon, beard etsy put a bird on it wolf. Heirloom farm-to-table everyday carry, glossier meditation seitan live-edge succulents four loko occupy cardigan keytar woke pinterest. Banjo prism tacos pop-up celiac. Kogi hot chicken scenester gastropub enamel pin meggings cred. Bitters biodiesel jean shorts, austin live-edge man braid 3 wolf moon blue bottle pinterest truffaut intelligentsia pour-over whatever kogi VHS.</p>
+    <h3>Hi there, thanks for stopping by!</h3>
+
+    <h3>I am a mostly front end web developer in Portland, Oregon. I love writing clean, resuable Javascript and think unit tests are important. I pride myself on being a friendly guy to work with and value being on a collaborative team.</h3>
     <h2>Projects</h2>
     <section className="projects-container">
       {projects}

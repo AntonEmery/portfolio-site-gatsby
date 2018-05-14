@@ -14,7 +14,7 @@ class About extends Component {
 
       <p>I play irish and old time music on guitar, banjo, and flute. I released a <a href="http://www.celticfingerstyleguitar.com" target="_blank" className="text-link">solo cd</a> in 2010, play a lot of music with friends, and perform occasionally at house concerts and other events around the Northwest.</p>
 
-      <p>Since 2006 I have been a lucky resident of Portland. The culture of coffee shops, food, music, and activities is a perfect fit.</p>
+      <p>Since 2006 I have been a lucky resident of Portland, Oreon. The culture of coffee shops, food, music, and activities is a perfect fit.</p>
       </div>
     );
   }
