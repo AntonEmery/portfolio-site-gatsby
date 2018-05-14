@@ -11,7 +11,7 @@ const IndexPage = props => {
       key={index}
       title={project.node.title}
       tagline={project.node.acf.tagline}
-      imageUrl={project.node.acf.imageurl.source_url}
+      imageUrl={project.node.acf.imageurl.localFile.childImageSharp.resolutions.src}
       id={project.node.wordpress_id}
     />
   })
@@ -42,7 +42,13 @@ export const websiteQuery = graphql`
         livelink
         tagline
         imageurl {
-          source_url
+          localFile {
+            childImageSharp {
+              resolutions {
+                src
+              }
+            }
+          }
         }
       }
       }

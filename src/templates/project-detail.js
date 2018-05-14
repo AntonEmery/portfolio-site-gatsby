@@ -18,7 +18,7 @@ class ProjectDetail extends Component {
           }
         </div>
         <div>
-          <img className="img-responsive" src={acf.imageurl.source_url} alt="project screen shot"/>
+          <img className="img-responsive" src={acf.imageurl.localFile.childImageSharp.resolutions.src} alt="project screen shot"/>
         </div>
       </div>
     );
@@ -37,7 +37,13 @@ export const query = graphql`
         description
         livelink
         imageurl {
-          source_url
+          localFile {
+            childImageSharp {
+              resolutions {
+                src
+              }
+            }
+          }
         }
       }
     }
