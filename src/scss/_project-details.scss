@@ -16,3 +16,13 @@
     margin-right: 8px;
   }
 }
+
+@media only screen and (max-width: 590px) {
+  .project-details {
+    flex-direction: column;
+  }
+
+  .project-image {
+    margin-top: 5%;
+  }
+}

@@ -14,7 +14,7 @@ const Nav = () => (
       <li className="nav-item">
         <NavLink activeClassName="nav--is-active" to="/contact" className="nav">CONTACT</NavLink>
       </li>
-      <li className="nav-item nav-item--last">
+      <li className="nav-item">
         <NavLink activeClassName="nav--is-active" to="http://antonemery.com/antonemeryresume.pdf" target="_blank" className="nav">RESUME</NavLink>
       </li>
     </ul>

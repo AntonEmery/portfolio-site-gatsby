@@ -17,7 +17,7 @@ class ProjectDetail extends Component {
             : ''
           }
         </div>
-        <div>
+        <div className="project-image">
           <img className="img-responsive" src={acf.imageurl.localFile.childImageSharp.resolutions.src} alt="project screen shot"/>
         </div>
       </div>
