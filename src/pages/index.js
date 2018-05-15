@@ -17,9 +17,9 @@ const IndexPage = props => {
   })
   return (
   <div>
-    <h3>Hi there, thanks for stopping by!</h3>
+    <h3 className="intro">Hi there, thanks for stopping by!</h3>
 
-    <h3>I am a mostly front end web developer in Portland, Oregon. I love writing clean, resuable Javascript and think unit tests are important. I pride myself on being a friendly guy to work with and value being on a collaborative team.</h3>
+    <h3 className="intro">I am a mostly front end web developer in Portland, Oregon. I love writing clean, resuable Javascript and think unit tests are important. I pride myself on being a friendly guy to work with, and value being on a collaborative team.</h3>
     <h2>Projects</h2>
     <section className="projects-container">
       {projects}

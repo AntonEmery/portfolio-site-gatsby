@@ -9,7 +9,7 @@ class ProjectDetail extends Component {
       <div className="project-details">
         <div>
           <h3>{title}</h3>
-          <p>{acf.description}</p>
+          <p dangerouslySetInnerHTML={{__html: acf.description}} />
           <p><span className="text-bold">Technologies Used:</span> {acf.tagline}</p>
           <a href={acf.livelink} target="_blank"><button className="project-button">Live Project</button></a>
           { acf.github
