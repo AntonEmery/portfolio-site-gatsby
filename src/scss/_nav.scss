@@ -6,6 +6,14 @@
   list-style: none;
 }
 
+.nav-list-mobile {
+  display: none;
+}
+
+.toggle-menu {
+  display: none;
+}
+
 a.nav-item {
   margin-right: 30px;
   border-bottom: 2px solid $nav-color;
@@ -22,10 +30,21 @@ a.nav-item {
   }
 }
 
-@media screen and (max-width: 590px) {
+@media screen and (max-width: $mobile-width) {
   .nav-list {
+    display: none;
+  }
+
+  .nav-list-mobile {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+  }
+
+  .toggle-menu {
+    display: block
   }
 
   a.nav-item {
