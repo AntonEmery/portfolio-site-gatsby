@@ -1,13 +1,9 @@
 import React, { Component } from 'react'
-import Link from 'gatsby-link'
 import { NavLink } from 'react-router-dom';
 import Toggle from './toggle';
+import onRouteUpdate from '../../gatsby-browser';
 
 class Nav extends Component {
-
-  componentDidMount() {
-    console.log('component did mount')
-  }
 
   render() {
     return (
