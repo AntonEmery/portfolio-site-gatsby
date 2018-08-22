@@ -5,6 +5,10 @@ import Toggle from './toggle';
 
 class Nav extends Component {
 
+  componentDidMount() {
+    console.log('component did mount')
+  }
+
   render() {
     return (
       <Toggle>
@@ -19,7 +23,7 @@ class Nav extends Component {
             <p className="toggle-menu" onClick={toggle}>MENU</p>
             {on &&
             <nav className="nav-list-mobile">
-              <NavLink onClick={toggle} activeClassName="nav-item--is-active" exact={true} to="/" className="nav-item">HOME</NavLink>
+              <NavLink onClick={toggle} onBlur={toggle} activeClassName="nav-item--is-active" exact={true} to="/" className="nav-item">HOME</NavLink>
               <NavLink onClick={toggle} activeClassName="nav-item--is-active" to="/about" className="nav-item">ABOUT</NavLink>
               <NavLink onClick={toggle} activeClassName="nav-item--is-active" to="/contact" className="nav-item">CONTACT</NavLink>
               <NavLink onClick={toggle} activeClassName="nav-item--is-active" to="http://antonemery.com/antonemeryresume.pdf" target="_blank" className="nav-item">RESUME</NavLink>
