@@ -4,7 +4,6 @@ import Toggle from './toggle';
 import onRouteUpdate from '../../gatsby-browser';
 
 class Nav extends Component {
-
   render() {
     return (
       <Toggle>
