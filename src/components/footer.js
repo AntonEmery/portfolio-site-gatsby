@@ -1,28 +1,24 @@
 import React from 'react'
-import Link from 'gatsby-link'
 
-import FaLinkedinSquare from 'react-icons/lib/fa/linkedin-square'
-import FaTwitterSquare from 'react-icons/lib/fa/twitter-square'
-import FaGithubSquare from 'react-icons/lib/fa/github-square'
-import FaEnvelope from 'react-icons/lib/fa/envelope'
+import { FaLinkedin, FaTwitterSquare, FaGithubSquare, FaEnvelope } from 'react-icons/fa'
 
 const Footer = () => (
   <footer>
     <div className="social">
-      <a href="http://www.linkedin.com/in/antonemery" className="social-link" target="_blank">
-        <FaLinkedinSquare />
+      <a href="http://www.linkedin.com/in/antonemery" className="social-link" target="_blank" rel="noopener noreferrer">
+        <FaLinkedin />
       </a>
-      <a href="http://www.twitter.com/antonemery" className="social-link" target="_blank">
+      <a href="http://www.twitter.com/antonemery" className="social-link" target="_blank" rel="noopener noreferrer">
         <FaTwitterSquare />
       </a>
-      <a href="http://www.github.com/antonemery" className="social-link" target="_blank">
+      <a href="http://www.github.com/antonemery" className="social-link" target="_blank" rel="noopener noreferrer">
         <FaGithubSquare />
       </a>
-      <a href="mailto:antonemery@gmail.com" className="social-link" target="_blank">
+      <a href="mailto:antonemery@gmail.com" className="social-link" target="_blank" rel="noopener noreferrer">
         <FaEnvelope />
       </a>
     </div>
-    <p className="gatsby">Built with &hearts; using <a href="https://www.gatsbyjs.org/" target="_blank" className="text-link">Gatsby.js</a> and <a href="https://wordpress.org/" target="_blank" className="text-link">WordPress</a></p>
+    <p className="gatsby">Built with &hearts; using <a href="https://www.gatsbyjs.org/" target="_blank" rel="noopener noreferrer" className="text-link">Gatsby.js</a> and <a href="https://wordpress.org/" target="_blank" rel="noopener noreferrer" className="text-link">WordPress</a></p>
   </footer>
 )
 

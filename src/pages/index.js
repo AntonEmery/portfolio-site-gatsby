@@ -1,6 +1,7 @@
 import React from 'react'
 import Projects from '../components/projects'
 import Skills from '../components/skills'
+import Layout from '../components/layouts/index'
 
 
 const IndexPage = props => {
@@ -15,17 +16,19 @@ const IndexPage = props => {
     />
   })
   return (
-  <div>
-    <p>Hi there, thanks for stopping by!</p>
+    <Layout>
+      <div>
+        <p>Hi there, thanks for stopping by!</p>
 
-    <p>I am a mostly front end web developer in Portland, Oregon. I love writing clean, resuable Javascript and think unit tests are important. I pride myself on being a friendly guy to work with, and value being on a collaborative team.</p>
-    <h2>Projects</h2>
-    <section className="projects-container">
-      {projects}
-    </section>
-    <h2>Technology I like</h2>
-    <Skills />
-  </div>
+        <p>I am a mostly front end web developer in Portland, Oregon. I love writing clean, resuable Javascript and think unit tests are important. I pride myself on being a friendly guy to work with, and value being on a collaborative team.</p>
+        <h2>Projects</h2>
+        <section className="projects-container">
+          {projects}
+        </section>
+        <h2>Technology I like</h2>
+        <Skills />
+      </div>
+    </Layout>
   )
 }
 
