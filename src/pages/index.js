@@ -1,7 +1,7 @@
 import React from 'react'
 import Projects from '../components/projects'
 import Skills from '../components/skills'
-import Layout from '../components/layouts/index'
+import Layout from '../components/layout'
 
 
 const IndexPage = props => {
