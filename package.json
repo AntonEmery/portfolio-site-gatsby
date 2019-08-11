@@ -27,7 +27,9 @@
   },
   "devDependencies": {
     "gatsby-plugin-sharp": "^2.0.37",
+    "gatsby-source-filesystem": "^2.1.9",
     "gatsby-source-wordpress": "^3.0.54",
+    "gatsby-transformer-remark": "^2.6.12",
     "gatsby-transformer-sharp": "^2.1.18",
     "prettier": "^1.17.0"
   }

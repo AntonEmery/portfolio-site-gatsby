@@ -2,6 +2,7 @@ import React from 'react'
 import Projects from '../components/projects'
 import Skills from '../components/skills'
 import Layout from '../components/layout'
+import { graphql } from 'gatsby'
 
 
 const IndexPage = props => {
@@ -20,7 +21,7 @@ const IndexPage = props => {
       <div>
         <p>Hi there, thanks for stopping by!</p>
 
-        <p>I am a mostly front end web developer in Portland, Oregon. I love writing clean, resuable Javascript and think unit tests are important. I pride myself on being a friendly guy to work with, and value being on a collaborative team.</p>
+        <p>I am a mostly front end web developer in Portland, Oregon. I have experience with a variety of front end frameworks, as well as plenty of vanilla Javascript.  I pride myself on being a friendly guy to work with, and value being on a collaborative team.</p>
         <h2>Projects</h2>
         <section className="projects-container">
           {projects}

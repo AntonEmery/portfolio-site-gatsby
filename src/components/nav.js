@@ -13,7 +13,7 @@ class Nav extends Component {
               <Link activeClassName="nav-item--is-active" exact={true} to="/" className="nav-item">HOME</Link>
               <Link activeClassName="nav-item--is-active" to="/about" className="nav-item">ABOUT</Link>
               <Link activeClassName="nav-item--is-active" to="/contact" className="nav-item">CONTACT</Link>
-              <a href="http://antonemery.com/antonemeryresume.pdf" target="_blank" className="nav-item">RESUME</a>
+              <a href="http://antonemery.com/antonemeryresume.pdf" target="_blank" rel="noopener noreferrer" className="nav-item">RESUME</a>
             </nav>
             <p className="toggle-menu" onClick={toggle}>MENU</p>
             {on &&
