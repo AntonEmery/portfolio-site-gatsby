@@ -12,14 +12,6 @@ module.exports = {
         useACF: true
       }
     },
-    'gatsby-transformer-remark',
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'blog',
-        path: `${__dirname}/src/blog`
-      }
-    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-sharp',

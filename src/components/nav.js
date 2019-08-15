@@ -10,18 +10,18 @@ class Nav extends Component {
         {({ on, toggle }) => (
           <div>
             <nav className="nav-list">
-              <Link activeClassName="nav-item--is-active" exact={true} to="/" className="nav-item">HOME</Link>
+              <Link activeClassName="nav-item--is-active" to="/" className="nav-item">HOME</Link>
               <Link activeClassName="nav-item--is-active" to="/about" className="nav-item">ABOUT</Link>
               <Link activeClassName="nav-item--is-active" to="/contact" className="nav-item">CONTACT</Link>
-              <a href="http://antonemery.com/antonemeryresume.pdf" target="_blank" rel="noopener noreferrer" className="nav-item">RESUME</a>
+              <a href="http://www.antonemery.com/antonemeryresume.pdf" target="_blank" rel="noopener noreferrer" className="nav-item">RESUME</a>
             </nav>
             <p className="toggle-menu" onClick={toggle}>MENU</p>
             {on &&
               <nav className="nav-list-mobile">
-                <Link onClick={toggle} activeClassName="nav-item--is-active" exact={true} to="/" className="nav-item">HOME</Link>
+                <Link onClick={toggle} activeClassName="nav-item--is-active" to="/" className="nav-item">HOME</Link>
                 <Link onClick={toggle} activeClassName="nav-item--is-active" to="/about" className="nav-item">ABOUT</Link>
                 <Link onClick={toggle} activeClassName="nav-item--is-active" to="/contact" className="nav-item">CONTACT</Link>
-                <Link onClick={toggle} activeClassName="nav-item--is-active" to="http://antonemery.com/antonemeryresume.pdf" target="_blank" className="nav-item">RESUME</Link>
+                <a href="http://www.antonemery.com/antonemeryresume.pdf" activeClassName="nav-item--is-active" target="_blank" rel="noopener noreferrer" className="nav-item">RESUME</a>
               </nav>}
           </div>
         )}
