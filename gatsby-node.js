@@ -4,14 +4,14 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
- // You can delete this file if you're not using it
+// You can delete this file if you're not using it
 
- const path = require('path');
+const path = require('path');
 
- exports.createPages = ({graphql, boundActionCreators}) => {
-   const { createPage } = boundActionCreators
-   return new Promise((resolve, reject) => {
-     graphql(`
+exports.createPages = ({ graphql, boundActionCreators }) => {
+  const { createPage } = boundActionCreators
+  return new Promise((resolve, reject) => {
+    graphql(`
      query PortfolioItem {
      allWordpressWpPortfolioItem {
       edges {
@@ -22,7 +22,7 @@
     }
   }
     `
-  ).then(result => {
+    ).then(result => {
       result.data.allWordpressWpPortfolioItem.edges.forEach(({ node }) => {
         createPage({
           path: `project/${node.wordpress_id}`,
@@ -32,11 +32,36 @@
           },
         })
       })
-      resolve()
     })
-   }).catch(error => {
-     console.log(error)
-     reject()
-   })
- };
 
+    //   graphql(`
+    //   allMarkdownRemark(
+    //     sort: { order: DESC, fields: [frontmatter___date] }
+    //     limit: 1000
+    //     ) {
+    //       edges {
+    //         node {
+    //           frontmatter {
+    //             path
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }
+    //   `)
+    // })
+    //   .then(result => {
+    //     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    //       const blogPostTemplate = path.resolve(`src/templates/blogTemplate.js`)
+    //       createPage({
+    //         path: node.frontmatter.path,
+    //         component: blogPostTemplate,
+    //         context: {}, // additional data can be passed via context
+    //       })
+    //     })
+    resolve();
+  }).catch(error => {
+    console.log(error)
+    reject()
+  })
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
+import Img from './img';
 
 class Projects extends Component {
   render() {
