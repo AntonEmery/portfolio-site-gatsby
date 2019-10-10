@@ -19,6 +19,7 @@ exports.createPages = async ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                slug
               }
             }
           }
@@ -37,17 +38,47 @@ exports.createPages = async ({ graphql, actions }) => {
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
-
     createPage({
-      path: post.node.fields.slug,
+      path: post.node.frontmatter.slug,
       component: blogPost,
       context: {
         slug: post.node.fields.slug,
+        path: post.node.frontmatter.slug,
         previous,
         next,
       },
     })
   })
+
+  const wordPressProjects = await graphql(
+    `
+    query PortfolioItem {
+      allWordpressWpPortfolioItem {
+       edges {
+        node {
+         wordpress_id
+        }
+       }
+     }
+   }
+    `
+  )
+  if (wordPressProjects.errors) {
+    throw wordPressProjects.errors
+  }
+
+  // Create WP Projects
+  const projects = wordPressProjects.data.allWordpressWpPortfolioItem.edges;
+  projects.forEach(({ node }) => {
+    createPage({
+      path: `project/${node.wordpress_id}`,
+      component: path.resolve(`./src/templates/project-detail.js`),
+      context: {
+        projectId: node.wordpress_id
+      },
+    })
+  })
+
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

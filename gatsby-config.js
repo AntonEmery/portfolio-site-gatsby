@@ -6,15 +6,15 @@ module.exports = {
     description: 'Anton Emery, Web Developer in Portland, Oregon'
   },
   plugins: [
-    // {
-    //   resolve: 'gatsby-source-wordpress',
-    //   options: {
-    //     baseUrl: 'localhost:3000/wordpresstest',
-    //     protocol: 'http',
-    //     hostingWPCOM: false,
-    //     useACF: true
-    //   }
-    // },
+    {
+      resolve: 'gatsby-source-wordpress',
+      options: {
+        baseUrl: 'localhost:3000/wordpresstest',
+        protocol: 'http',
+        hostingWPCOM: false,
+        useACF: true
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

@@ -21,13 +21,20 @@ export default function Template({
 }
 
 export const pageQuery = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query BlogPostBySlug($slug: String!) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
+      excerpt(pruneLength: 160)
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        path
         title
+        date(formatString: "MMMM DD, YYYY")
+        description
       }
     }
   }
