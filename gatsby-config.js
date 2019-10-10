@@ -1,4 +1,5 @@
 const path = require('path');
+const { createPath } = require('gatsby-source-filesystem');
 
 module.exports = {
   siteMetadata: {
