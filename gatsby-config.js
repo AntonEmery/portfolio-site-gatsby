@@ -1,5 +1,4 @@
 const path = require('path');
-const { createPath } = require('gatsby-source-filesystem');
 
 module.exports = {
   siteMetadata: {
@@ -7,20 +6,20 @@ module.exports = {
     description: 'Anton Emery, Web Developer in Portland, Oregon'
   },
   plugins: [
-    {
-      resolve: 'gatsby-source-wordpress',
-      options: {
-        baseUrl: 'localhost:3000/wordpresstest',
-        protocol: 'http',
-        hostingWPCOM: false,
-        useACF: true
-      }
-    },
+    // {
+    //   resolve: 'gatsby-source-wordpress',
+    //   options: {
+    //     baseUrl: 'localhost:3000/wordpresstest',
+    //     protocol: 'http',
+    //     hostingWPCOM: false,
+    //     useACF: true
+    //   }
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/src/markdown-pages`,
+        name: `blog`,
+        path: `${__dirname}/content/blog`,
       },
     },
     {
@@ -36,6 +35,5 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-sharp',
     `gatsby-transformer-remark`,
-
   ],
 }

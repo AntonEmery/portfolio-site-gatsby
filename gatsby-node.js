@@ -1,67 +1,64 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require(`path`)
+const { createFilePath } = require(`gatsby-source-filesystem`)
 
-// You can delete this file if you're not using it
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
 
-const path = require('path');
-
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators
-  return new Promise((resolve, reject) => {
-    graphql(`
-     query PortfolioItem {
-     allWordpressWpPortfolioItem {
-      edges {
-       node {
-        wordpress_id
-       }
-      }
-    }
-  }
+  const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const result = await graphql(
     `
-    ).then(result => {
-      result.data.allWordpressWpPortfolioItem.edges.forEach(({ node }) => {
-        createPage({
-          path: `project/${node.wordpress_id}`,
-          component: path.resolve(`./src/templates/project-detail.js`),
-          context: {
-            projectId: node.wordpress_id
-          },
-        })
-      })
-    })
+      {
+        allMarkdownRemark(
+          sort: { fields: [frontmatter___date], order: DESC }
+          limit: 1000
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+              }
+            }
+          }
+        }
+      }
+    `
+  )
 
-    //   graphql(`
-    //   allMarkdownRemark(
-    //     sort: { order: DESC, fields: [frontmatter___date] }
-    //     limit: 1000
-    //     ) {
-    //       edges {
-    //         node {
-    //           frontmatter {
-    //             path
-    //           }
-    //         }
-    //       }
-    //     }
-    //   }
-    //   `)
-    // })
-    //   .then(result => {
-    //     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    //       const blogPostTemplate = path.resolve(`src/templates/blogTemplate.js`)
-    //       createPage({
-    //         path: node.frontmatter.path,
-    //         component: blogPostTemplate,
-    //         context: {}, // additional data can be passed via context
-    //       })
-    //     })
-    resolve();
-  }).catch(error => {
-    console.log(error)
-    reject()
+  if (result.errors) {
+    throw result.errors
+  }
+
+  // Create blog posts pages.
+  const posts = result.data.allMarkdownRemark.edges
+
+  posts.forEach((post, index) => {
+    const previous = index === posts.length - 1 ? null : posts[index + 1].node
+    const next = index === 0 ? null : posts[index - 1].node
+
+    createPage({
+      path: post.node.fields.slug,
+      component: blogPost,
+      context: {
+        slug: post.node.fields.slug,
+        previous,
+        next,
+      },
+    })
   })
+}
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode })
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    })
+  }
 }
