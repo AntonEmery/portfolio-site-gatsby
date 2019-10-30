@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-import layout from '../components/layout';
 import Layout from "../components/layout";
 
 export default function Template({
