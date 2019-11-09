@@ -29,11 +29,19 @@ module.exports = {
         path: path.join(__dirname, `src`, `images`),
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'projects',
+        path: `${__dirname}/content/projects`
+      }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass',
-    'gatsby-plugin-sharp',
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
+    `gastsby-transformer-json`
   ],
 }
