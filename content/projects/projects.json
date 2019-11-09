@@ -1,8 +1,22 @@
 [
   {
-    "title": "Chord App"
+    "title": "Chord App",
+    "image": "",
+    "techStack": [
+      "React",
+      "Node/Express",
+      "Passport",
+      "Mongodb"
+    ]
   },
   {
-    "title": "BeFunky Blog"
+    "title": "BeFunky Blog",
+    "image": "",
+    "techStack": [
+      "WordPress",
+      "Node",
+      "Metalsmith",
+      "Nunjucks"
+    ]
   }
 ]
