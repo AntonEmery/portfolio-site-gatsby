@@ -42,6 +42,6 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
-    `gastsby-transformer-json`
+    `gatsby-transformer-json`
   ],
 }

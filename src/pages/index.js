@@ -2,10 +2,11 @@ import React from 'react'
 import Projects from '../components/projects'
 import Skills from '../components/skills'
 import Layout from '../components/layout'
-import { graphql } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 
 
 const IndexPage = props => {
+  console.log(props)
   const webProjects = props.data.allWordpressWpPortfolioItem.edges;
   const projects = webProjects.map((project, index) => {
     return <Projects
@@ -57,6 +58,14 @@ export const websiteQuery = graphql`
           }
         }
       }
+      }
+    }
+  }
+  allProjectsJson {
+    edges {
+      node {
+        title
+        techStack
       }
     }
   }
