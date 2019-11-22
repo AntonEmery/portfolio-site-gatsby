@@ -3,7 +3,7 @@ body {
 	font-weight: 400;
 	text-rendering: optimizeLegibility;
 	font-size: 16px;
-	line-height: 25px;
+	line-height: 1.8;
 	color: $header-color;
 }
 
@@ -27,13 +27,13 @@ h3 {
 	line-height: 1.1;
 }
 
-p {
+p, li {
 	font-weight: $body-font-weight;
 	font-size: $body-font-size;
 	color: $paragraph-color;
 }
 
-a, p {
+a, p, li {
 	font-family: $font-stack;
 }
 

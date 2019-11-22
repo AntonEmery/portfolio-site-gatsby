@@ -1,17 +1,16 @@
 import React from 'react'
 
 const Skills = () => (
-    <section className="skill-section">
-      <div className="skill">
-        <img src="/img/javascript_logo.png" className="img-responsive" alt="javscript logo" />
-      </div>
-      <div className="skill">
-        <img src="/img/react_logo.png" className="img-responsive" alt="react logo" />
-      </div>
-      <div className="skill">
-        <img src="/img/html_css.png" className="img-responsive" alt="html css logo" />
-      </div>
-    </section>
+  <section className="skill-section">
+    <h2>Skills</h2>
+    <ul>
+      <li>Strong front end engineer. Good vanilla Javascript skills</li>
+      <li>Expertise with React, Mithril, and other front end frameworks</li>
+      <li>Good ability with Node</li>
+      <li>Testing using Mocha/Chai and Cypress</li>
+      <li>Excellent communicator and team player</li>
+    </ul>
+  </section>
 )
 
 export default Skills;
