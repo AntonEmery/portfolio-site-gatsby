@@ -28,7 +28,6 @@ const IndexPage = props => {
         <section className="projects-container">
           {projects}
         </section>
-        <h2>Technology I like</h2>
         <Skills />
       </div>
     </Layout>
