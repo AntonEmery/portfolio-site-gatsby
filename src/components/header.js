@@ -9,9 +9,13 @@ const Header = ({ siteTitle }) => (
         padding: '1.45rem 1.0875rem',
       }}
     >
-    <Nav />
-      <h1 className="page-title"><Link to="/" className="header-link" style={{textDecoration: 'none'}}>Anton Emery</Link></h1>
-      <h2 className="sub-title"><Link to="/" className="header-link" style={{textDecoration: 'none'}}>Web Developer</Link></h2>
+      <Nav />
+      <div className="site-heading">
+        <Link to="/">
+          <h1 className="page-title">Anton Emery</h1>
+          <div className="sub-title">Web Developer</div>
+        </Link>
+      </div>
     </div>
   </div>
 )
