@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
-import Img from './img';
+import Img from 'gatsby-image'
 
 class Projects extends Component {
   render() {
-    const { imageUrl, title, tagline, id } = this.props;
+    const { image, title, tech, slug } = this.props;
     return (
-      <Link to={`/project/${id}`} className="project">
-        <img className="img-responsive" src={imageUrl} alt="project screen shot" />
+      <Link to={`/project/${slug}`} className="project">
+        <Img className="img-responsive" src={image} alt={`image of ${title}`} />
         <div className="project-description">
           <h5 className="project-title">{title}</h5>
-          <p className="project-tagline">{tagline}</p>
+          <p className="project-tagline">{tech}</p>
         </div>
       </Link>
     )

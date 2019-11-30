@@ -29,25 +29,25 @@ class ProjectDetail extends Component {
 
 export default ProjectDetail;
 
-export const query = graphql`
-  query ProjectDetails($projectId: Int!) {
-    wordpressWpPortfolioItem (wordpress_id: { eq: $projectId }) {
-      title
-      acf {
-        github
-        tagline
-        description
-        livelink
-        imageurl {
-          localFile {
-            childImageSharp {
-              resolutions {
-                src
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query ProjectDetails($projectId: Int!) {
+//     wordpressWpPortfolioItem (wordpress_id: { eq: $projectId }) {
+//       title
+//       acf {
+//         github
+//         tagline
+//         description
+//         livelink
+//         imageurl {
+//           localFile {
+//             childImageSharp {
+//               resolutions {
+//                 src
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `

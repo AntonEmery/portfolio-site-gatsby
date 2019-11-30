@@ -50,46 +50,46 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  const wordPressProjects = await graphql(
+  const projectsSlug = await graphql(
     `
     query PortfolioItem {
-      allWordpressWpPortfolioItem {
+      allProjetsJson {
        edges {
         node {
-         wordpress_id
+          slug
         }
        }
      }
    }
     `
   )
-  if (wordPressProjects.errors) {
-    throw wordPressProjects.errors
+  if (projectsSlug.errors) {
+    throw projectsSlug.errors
   }
 
-  // Create WP Projects
-  const projects = wordPressProjects.data.allWordpressWpPortfolioItem.edges;
+  // Create Projects
+  const projects = allProjectsJson.edges.allWordpressWpPortfolioItem.edges;
   projects.forEach(({ node }) => {
     createPage({
-      path: `project/${node.wordpress_id}`,
+      path: `project/${node.slug}`,
       component: path.resolve(`./src/templates/project-detail.js`),
       context: {
-        projectId: node.wordpress_id
+        projectId: node.slug
       },
     })
   })
 
 }
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+// exports.onCreateNode = ({ node, actions, getNode }) => {
+//   const { createNodeField } = actions
 
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    })
-  }
-}
+//   if (node.internal.type === `MarkdownRemark`) {
+//     const value = createFilePath({ node, getNode })
+//     createNodeField({
+//       name: `slug`,
+//       node,
+//       value,
+//     })
+//   }
+// }

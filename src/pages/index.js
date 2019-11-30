@@ -7,14 +7,14 @@ import { StaticQuery, graphql } from 'gatsby'
 
 const IndexPage = props => {
   console.log(props)
-  const webProjects = props.data.allWordpressWpPortfolioItem.edges;
-  const projects = webProjects.map((project, index) => {
+  const projectsFromJSON = props.data.allProjectsJson.edges
+  const projects = projectsFromJSON.map((project, index) => {
     return <Projects
       key={index}
       title={project.node.title}
-      tagline={project.node.acf.tagline}
-      imageUrl={project.node.acf.imageurl.localFile.childImageSharp.resolutions.src}
-      id={project.node.wordpress_id}
+      tagline={project.node.tech}
+      imageUrl={project.node.image}
+      id={project.node.slug}
     />
   })
   return (
@@ -36,37 +36,18 @@ const IndexPage = props => {
 
 export default IndexPage
 
-export const websiteQuery = graphql`
-  query PortfolioItem {
-    allWordpressWpPortfolioItem {
-    edges {
-     node {
-      wordpress_id
-      title
-      content
-      acf {
-        livelink
-        tagline
-        imageurl {
-          localFile {
-            childImageSharp {
-              resolutions {
-                src
-              }
-            }
-          }
+export const projectsQuery = graphql`
+  query MyQuery {
+    allProjectsJson {
+      edges {
+        node {
+          title
+          tech
+          id
+          image
+          slug
         }
       }
-      }
     }
   }
-  allProjectsJson {
-    edges {
-      node {
-        title
-        techStack
-      }
-    }
-  }
-}
 `

@@ -2,21 +2,13 @@
   {
     "title": "Chord App",
     "image": "",
-    "techStack": [
-      "React",
-      "Node/Express",
-      "Passport",
-      "Mongodb"
-    ]
+    "tech": "React, Node/Express, Passport, Mongo",
+    "slug": "chord-app"
   },
   {
     "title": "BeFunky Blog",
     "image": "",
-    "techStack": [
-      "WordPress",
-      "Node",
-      "Metalsmith",
-      "Nunjucks"
-    ]
+    "tech": "WordPress, Node, Metalsmith, Nunjucks",
+    "slug": "befunky-blog"
   }
 ]
