@@ -2,7 +2,7 @@ import React from 'react'
 import Projects from '../components/projects'
 import Skills from '../components/skills'
 import Layout from '../components/layout'
-import { StaticQuery, graphql } from 'gatsby'
+import { staticQuery, graphql } from 'gatsby'
 
 
 const IndexPage = props => {
