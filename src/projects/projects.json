@@ -1,13 +1,13 @@
 [
   {
     "title": "Chord App",
-    "image": "",
+    "image": "./befunky-blog.png",
     "tech": "React, Node/Express, Passport, Mongo",
     "slug": "chord-app"
   },
   {
     "title": "BeFunky Blog",
-    "image": "",
+    "image": "./befunky-blog.png",
     "tech": "WordPress, Node, Metalsmith, Nunjucks",
     "slug": "befunky-blog"
   }

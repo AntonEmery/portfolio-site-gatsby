@@ -2,18 +2,17 @@ import React from 'react'
 import Projects from '../components/projects'
 import Skills from '../components/skills'
 import Layout from '../components/layout'
-import { staticQuery, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
 
 const IndexPage = props => {
-  console.log(props)
   const projectsFromJSON = props.data.allProjectsJson.edges
   const projects = projectsFromJSON.map((project, index) => {
     return <Projects
       key={index}
       title={project.node.title}
       tagline={project.node.tech}
-      imageUrl={project.node.image}
+      image={project.node.image}
       id={project.node.slug}
     />
   })
@@ -43,9 +42,18 @@ export const projectsQuery = graphql`
         node {
           title
           tech
-          id
-          image
           slug
+          image {
+            childImageSharp {
+              fluid {
+                aspectRatio
+                base64
+                sizes
+                src
+                srcSet
+              }
+            }
+          }
         }
       }
     }
