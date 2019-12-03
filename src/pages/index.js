@@ -13,7 +13,7 @@ const IndexPage = props => {
       title={project.node.title}
       tagline={project.node.tech}
       image={project.node.image}
-      id={project.node.slug}
+      slug={project.node.slug}
     />
   })
   return (
