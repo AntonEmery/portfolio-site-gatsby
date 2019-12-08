@@ -14,11 +14,11 @@ exports.createPages = async ({ graphql, actions }) => {
         ) {
           edges {
             node {
-              fields {
-                slug
-              }
               frontmatter {
                 title
+                slug
+              }
+              fields {
                 slug
               }
             }
@@ -43,19 +43,19 @@ exports.createPages = async ({ graphql, actions }) => {
       component: blogPost,
       context: {
         slug: post.node.fields.slug,
-        path: post.node.frontmatter.slug,
         previous,
         next,
       },
     })
   })
 
-  const projectsSlug = await graphql(
+  const allProjectsJson = await graphql(
     `
     query PortfolioItem {
-      allProjetsJson {
+      allProjectsJson {
        edges {
         node {
+          id
           slug
         }
        }
@@ -63,33 +63,33 @@ exports.createPages = async ({ graphql, actions }) => {
    }
     `
   )
-  if (projectsSlug.errors) {
-    throw projectsSlug.errors
+  if (allProjectsJson.errors) {
+    throw allProjectsJson.errors
   }
 
   // Create Projects
-  const projects = allProjectsJson.edges.allWordpressWpPortfolioItem.edges;
-  projects.forEach(({ node }) => {
+  const projects = await allProjectsJson.data.allProjectsJson.edges;
+  projects.forEach((project) => {
     createPage({
-      path: `project/${node.slug}`,
+      path: `${project.node.slug}`,
       component: path.resolve(`./src/templates/project-detail.js`),
       context: {
-        projectId: node.slug
+        projectId: project.node.id
       },
     })
   })
 
 }
 
-// exports.onCreateNode = ({ node, actions, getNode }) => {
-//   const { createNodeField } = actions
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
 
-//   if (node.internal.type === `MarkdownRemark`) {
-//     const value = createFilePath({ node, getNode })
-//     createNodeField({
-//       name: `slug`,
-//       node,
-//       value,
-//     })
-//   }
-// }
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode })
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    })
+  }
+}

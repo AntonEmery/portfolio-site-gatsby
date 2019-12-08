@@ -5,10 +5,12 @@ import { graphql } from 'gatsby'
 
 class ProjectDetail extends Component {
   render() {
-    const { title, acf } = this.props.data.wordpressWpPortfolioItem
+    const projectData = this.props
+    console.log(projectData)
     return (
       <Layout>
-        <div className="project-details">
+        <p>Test</p>
+        {/* <div className="project-details">
           <div>
             <h3>{title}</h3>
             <p dangerouslySetInnerHTML={{ __html: acf.description }} />
@@ -21,7 +23,7 @@ class ProjectDetail extends Component {
           <div className="project-image">
             <img className="img-responsive" src={acf.imageurl.localFile.childImageSharp.resolutions.src} alt="project screen shot" />
           </div>
-        </div>
+        </div> */}
       </Layout>
     );
   }
@@ -29,25 +31,30 @@ class ProjectDetail extends Component {
 
 export default ProjectDetail;
 
-// export const query = graphql`
-//   query ProjectDetails($projectId: Int!) {
-//     wordpressWpPortfolioItem (wordpress_id: { eq: $projectId }) {
-//       title
-//       acf {
-//         github
-//         tagline
-//         description
-//         livelink
-//         imageurl {
-//           localFile {
-//             childImageSharp {
-//               resolutions {
-//                 src
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
+export const query = graphql`
+  query ProjectDetails($projectId: String!) {
+    allProjectsJson (filter: {id: {eq: $projectId}})  {
+      edges {
+        node {
+          id
+          title
+          tech
+          slug
+          image {
+            childImageSharp {
+              fluid {
+                aspectRatio
+                base64
+                sizes
+                src
+                srcSet
+              }
+            }
+          }
+          description
+          githubLink
+        }
+      }
+    }
+}
+`

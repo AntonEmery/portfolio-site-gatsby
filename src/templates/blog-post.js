@@ -24,7 +24,7 @@ export default function Template({
 }
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query BlogPostBySlug {
     site {
       siteMetadata {
         title

@@ -6,7 +6,7 @@ class Projects extends Component {
   render() {
     const { image, title, tech, slug } = this.props;
     return (
-      <Link to={`/project/${slug}`} className="project">
+      <Link to={`${slug}`} className="project">
         <Img className="img-responsive" fluid={image.childImageSharp.fluid} alt={`image of ${title}`} />
         <div className="project-description">
           <h5 className="project-title">{title}</h5>

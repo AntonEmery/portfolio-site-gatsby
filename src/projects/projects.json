@@ -1,14 +1,22 @@
 [
   {
+    "id": "1",
     "title": "Chord App",
     "image": "./befunky-blog.png",
     "tech": "React, Node/Express, Passport, Mongo",
-    "slug": "chord-app"
+    "description": "Description here",
+    "slug": "chord-app",
+    "githubLink": "example.com",
+    "liveLink": "example.com"
   },
   {
+    "id": "2",
     "title": "BeFunky Blog",
     "image": "./befunky-blog.png",
     "tech": "WordPress, Node, Metalsmith, Nunjucks",
-    "slug": "befunky-blog"
+    "description": "Description here",
+    "slug": "befunky-blog",
+    "githubLink": "example.com",
+    "liveLink": "example.com"
   }
 ]
