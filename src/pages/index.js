@@ -11,7 +11,7 @@ const IndexPage = props => {
     return <Projects
       key={index}
       title={project.node.title}
-      tagline={project.node.tech}
+      tech={project.node.tech}
       image={project.node.image}
       slug={project.node.slug}
     />

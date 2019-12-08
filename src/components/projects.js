@@ -4,13 +4,14 @@ import Img from 'gatsby-image'
 
 class Projects extends Component {
   render() {
+    console.log(this.props)
     const { image, title, tech, slug } = this.props;
     return (
       <Link to={`${slug}`} className="project">
-        <Img className="img-responsive" fluid={image.childImageSharp.fluid} alt={`image of ${title}`} />
+        <Img fluid={image.childImageSharp.fluid} alt={`{title} screenshot`} />
         <div className="project-description">
           <h5 className="project-title">{title}</h5>
-          <p className="project-tagline">{tech}</p>
+          <h5 className="project-tagline">{tech}</h5>
         </div>
       </Link>
     )

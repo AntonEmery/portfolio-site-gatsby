@@ -1,29 +1,31 @@
 import React, { Component } from 'react'
 import Layout from '../components/layout'
+import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
 
 
 class ProjectDetail extends Component {
   render() {
-    const projectData = this.props
+    const projectData = this.props.data.allProjectsJson.edges[0].node
     console.log(projectData)
     return (
       <Layout>
-        <p>Test</p>
-        {/* <div className="project-details">
+        <div className="project-details">
           <div>
-            <h3>{title}</h3>
-            <p dangerouslySetInnerHTML={{ __html: acf.description }} />
-            <p><span className="text-bold">Technologies Used:</span> {acf.tagline}</p>
-            <a href={acf.livelink} target="_blank" rel="noopener noreferrer"><button className="project-button">Live Project</button></a>
+            <h3>{projectData.title}</h3>
+            <p dangerouslySetInnerHTML={{ __html: projectData.description }} />
+            <p><span className="text-bold">Technologies Used:</span> {projectData.tech}</p>
             {
-              acf.github && <a href={acf.github} target="_blank" rel="noopener noreferrer"><button className="project-button">Github Repo</button></a>
+              projectData.liveLink && <a href={projectData.liveLink} target="_blank" rel="noopener noreferrer"><button className="project-button">Live Project</button></a>
+            }
+            {
+              projectData.githubLink && <a href={projectData.githubLink} target="_blank" rel="noopener noreferrer"><button className="project-button">Github Repo</button></a>
             }
           </div>
           <div className="project-image">
-            <img className="img-responsive" src={acf.imageurl.localFile.childImageSharp.resolutions.src} alt="project screen shot" />
+            <Img className="img-responsive" fluid={projectData.image.childImageSharp.fluid} alt={`{title} screenshot`} />
           </div>
-        </div> */}
+        </div>
       </Layout>
     );
   }
@@ -53,6 +55,7 @@ export const query = graphql`
           }
           description
           githubLink
+          liveLink
         }
       }
     }
