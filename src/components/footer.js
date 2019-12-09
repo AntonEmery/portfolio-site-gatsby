@@ -17,7 +17,7 @@ const Footer = () => (
         <FaEnvelope />
       </a>
     </div>
-    <p className="gatsby">Built using <a href="https://www.gatsbyjs.org/" target="_blank" rel="noopener noreferrer" className="text-link">Gatsby.js</a> and <a href="https://wordpress.org/" target="_blank" rel="noopener noreferrer" className="text-link">WordPress</a></p>
+    <p className="gatsby">Built using <a href="https://www.gatsbyjs.org/" target="_blank" rel="noopener noreferrer" className="text-link">Gatsby.js</a></p>
   </footer>
 )
 

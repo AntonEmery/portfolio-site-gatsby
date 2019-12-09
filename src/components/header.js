@@ -13,7 +13,7 @@ const Header = ({ siteTitle }) => (
       <div className="site-heading">
         <Link to="/">
           <h1 className="page-title">Anton Emery</h1>
-          <div className="sub-title">Web Developer</div>
+          {/* <div className="sub-title">Web Developer</div> */}
         </Link>
       </div>
     </div>
