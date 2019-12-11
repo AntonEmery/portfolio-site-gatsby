@@ -11,8 +11,8 @@ class ProjectDetail extends Component {
     return (
       <Layout>
         <div className="project-details">
-          <div>
-            <h3>{projectData.title}</h3>
+          <div className="project__info">
+            <h2>{projectData.title}</h2>
             <p><span className="text-bold">Technologies Used:</span> {projectData.tech}</p>
             {
               projectData.liveLink && <a href={projectData.liveLink} target="_blank" rel="noopener noreferrer"><button className="project-button">Live Project</button></a>
@@ -20,11 +20,12 @@ class ProjectDetail extends Component {
             {
               projectData.githubLink && <a href={projectData.githubLink} target="_blank" rel="noopener noreferrer"><button className="project-button">Github Repo</button></a>
             }
-            <p dangerouslySetInnerHTML={{ __html: projectData.description }} />
           </div>
           <div className="project-image">
             <Img className="img-responsive" fluid={projectData.image.childImageSharp.fluid} alt={`{title} screenshot`} />
           </div>
+          <p dangerouslySetInnerHTML={{ __html: projectData.description }} />
+
         </div>
       </Layout>
     );

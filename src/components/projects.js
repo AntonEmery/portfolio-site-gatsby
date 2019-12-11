@@ -4,7 +4,6 @@ import Img from 'gatsby-image'
 
 class Projects extends Component {
   render() {
-    console.log(this.props)
     const { image, title, tech, slug } = this.props;
     return (
       <Link to={`${slug}`} className="project">
