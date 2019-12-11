@@ -1,42 +1,95 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require(`path`)
+const { createFilePath } = require(`gatsby-source-filesystem`)
 
- // You can delete this file if you're not using it
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
 
- const path = require('path');
-
- exports.createPages = ({graphql, boundActionCreators}) => {
-   const { createPage } = boundActionCreators
-   return new Promise((resolve, reject) => {
-     graphql(`
-     query PortfolioItem {
-     allWordpressWpPortfolioItem {
-      edges {
-       node {
-        wordpress_id
-       }
-      }
-    }
-  }
+  const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const blogPosts = await graphql(
     `
-  ).then(result => {
-      result.data.allWordpressWpPortfolioItem.edges.forEach(({ node }) => {
-        createPage({
-          path: `project/${node.wordpress_id}`,
-          component: path.resolve(`./src/templates/project-detail.js`),
-          context: {
-            projectId: node.wordpress_id
-          },
-        })
-      })
-      resolve()
-    })
-   }).catch(error => {
-     console.log(error)
-     reject()
-   })
- };
+      {
+        allMarkdownRemark(
+          sort: { fields: [frontmatter___date], order: DESC }
+          limit: 1000
+        ) {
+          edges {
+            node {
+              frontmatter {
+                title
+                slug
+              }
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
+    `
+  )
 
+  if (blogPosts.errors) {
+    throw blogPosts.errors
+  }
+
+  // Create blog posts pages.
+  const posts = blogPosts.data.allMarkdownRemark.edges
+
+  posts.forEach((post, index) => {
+    const next = index === posts.length - 1 ? null : posts[index + 1].node
+    const previous = index === 0 ? null : posts[index - 1].node
+    createPage({
+      path: post.node.frontmatter.slug,
+      component: blogPost,
+      context: {
+        slug: post.node.fields.slug,
+        previous,
+        next,
+      },
+    })
+  })
+
+  const allProjectsJson = await graphql(
+    `
+    query PortfolioItem {
+      allProjectsJson {
+       edges {
+        node {
+          id
+          slug
+        }
+       }
+     }
+   }
+    `
+  )
+  if (allProjectsJson.errors) {
+    throw allProjectsJson.errors
+  }
+
+  // Create Projects
+  const projects = await allProjectsJson.data.allProjectsJson.edges;
+  projects.forEach((project) => {
+    createPage({
+      path: `${project.node.slug}`,
+      component: path.resolve(`./src/templates/project-detail.js`),
+      context: {
+        projectId: project.node.id
+      },
+    })
+  })
+
+}
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode })
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    })
+  }
+}

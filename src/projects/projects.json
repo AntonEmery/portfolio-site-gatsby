@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "title": "Chord App",
+    "image": "./chord-app.png",
+    "tech": "React, Node/Express, Passport, Mongo",
+    "description": "<h3>Overview</h3><p>This project came out of that old project idea, which is to build something that solves a problem you have.  I occasionally teach online guitar lessons, and wanted some easy to send chord diagrams to students. Contrary to what you might think, there is not any software to easily do just this. So I set out to try and build my own.</p><h3>Tech</h3><p>My initial thought was to just build a front end where folks could notate chords. I was able to accomplish that drawing lines with SVGs.  Pretty cool, but the user had no ability to save anything, so why not use this app as a platform learn more things? So I moved my front end into React and added Node/Express on the backend, connected to MongoDB</p><p>After much trial and error, watching tutorials, and asking lots of questions the app now has user account creation, saving of chord sheets, and password reset. Express handles all my back end routing, and I use Passport for user authentication.</p><p>I enjoyed learning some more full stack type skills in this project, and hope to get it to a state where I can put it out into the world</p>",
+    "slug": "chord-app",
+    "githubLink": "https://github.com/AntonEmery/chord-app"
+  },
+  {
+    "id": "2",
+    "title": "BeFunky Blog",
+    "image": "./befunky-blog.png",
+    "tech": "WordPress, Node, Metalsmith, Nunjucks, PHP",
+    "description": "<h3>Overview</h3><p>The goal of this project was to move the BeFunky blog from using a WordPress theme on the front end to something that could utilize the same code and styles as the main company site. This would allow us to avoid keeping two separate style bases in sync, and would put all the code in one place for easier future maintenence. We wanted to keep the existing WordPress back end as it contained ten years of blog posts, had alot of SEO value, and post writers could keep working in a familiar environment</p><h3>My Role</h3><p>I was one of two front end developers on this project. I handled most of the fetching of the WordPress data via Node, and shaping that it into what we needed. I also wrote most of the WordPress plugin that formatted some of the datavbefore it was outputted by the API. My team lead helped with some of the trickier bits, like rebuilding only the neccessary pieces of the site when a post was updated or published.</p><h3>Tech</h3><p>After looking at a few different solutions we decided to roll our own. This would make it easier to integrate already existing code and allow for the most flexibility in the future.</p><p>The WordPress API is the main source of all the data, and I wrote a plugin to shape alot of the data before it hit the client. This included getting width/height for all the post images, post authors, and outputting the Gutenberg blocks in each post as an array of objects.</p><p>Once all the post data is fetched and parsed by Node we use Metalsmith render all the pages and then generate the static files.  Metalsmith is a Node based static site generator and offers alot of flexibility. We used Nunjucks for templating. This part functions similarly to other static site generators out there, with template inheritance to more efficiently organize everything.</p><p>In addition to all the generated HTML the blog uses alot of Javascript to replicate features that were previously handled by WordPress plugins. Things includes things like lazy image loading, and only requesting a Vimeo video when the user clicks on the play button</p>",
+    "slug": "befunky-blog",
+    "liveLink": "http://www.befunky.com/learn/"
+  }
+]

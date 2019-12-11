@@ -1,3 +1,8 @@
+.site-heading {
+  display: flex;
+  flex-direction: row;
+}
+
 @media screen and (max-width: 476px) {
   .page-title {
     font-size: 60px;
@@ -13,5 +18,9 @@
 @media screen and (max-width: 336px) {
   .page-title {
     font-size: 40px;
+  }
+
+  .sub-title {
+    margin: 0px 0px;
   }
 }

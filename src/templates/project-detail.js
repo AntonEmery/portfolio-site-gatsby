@@ -1,24 +1,33 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import Layout from '../components/layout'
+import Img from 'gatsby-image'
+import { graphql } from 'gatsby'
 
 
 class ProjectDetail extends Component {
   render() {
-    const { title, content, acf } = this.props.data.wordpressWpPortfolioItem
+    const projectData = this.props.data.allProjectsJson.edges[0].node
+    console.log(projectData)
     return (
-      <div className="project-details">
-        <div>
-          <h3>{title}</h3>
-          <p dangerouslySetInnerHTML={{__html: acf.description}} />
-          <p><span className="text-bold">Technologies Used:</span> {acf.tagline}</p>
-          <a href={acf.livelink} target="_blank"><button className="project-button">Live Project</button></a>
-          {
-            acf.github && <a href={acf.github} target="_blank"><button className="project-button">Github Repo</button></a>
-          }
+      <Layout>
+        <div className="project-details">
+          <div className="project__info">
+            <h2>{projectData.title}</h2>
+            <p><span className="text-bold">Technologies Used:</span> {projectData.tech}</p>
+            {
+              projectData.liveLink && <a href={projectData.liveLink} target="_blank" rel="noopener noreferrer"><button className="project-button">Live Project</button></a>
+            }
+            {
+              projectData.githubLink && <a href={projectData.githubLink} target="_blank" rel="noopener noreferrer"><button className="project-button">Github Repo</button></a>
+            }
+          </div>
+          <div className="project-image">
+            <Img className="img-responsive" fluid={projectData.image.childImageSharp.fluid} alt={`{title} screenshot`} />
+          </div>
+          <p dangerouslySetInnerHTML={{ __html: projectData.description }} />
+
         </div>
-        <div className="project-image">
-          <img className="img-responsive" src={acf.imageurl.localFile.childImageSharp.resolutions.src} alt="project screen shot"/>
-        </div>
-      </div>
+      </Layout>
     );
   }
 }
@@ -26,24 +35,30 @@ class ProjectDetail extends Component {
 export default ProjectDetail;
 
 export const query = graphql`
-  query ProjectDetails($projectId: Int!) {
-    wordpressWpPortfolioItem (wordpress_id: { eq: $projectId }) {
-      title
-      acf {
-        github
-        tagline
-        description
-        livelink
-        imageurl {
-          localFile {
+  query ProjectDetails($projectId: String!) {
+    allProjectsJson (filter: {id: {eq: $projectId}})  {
+      edges {
+        node {
+          id
+          title
+          tech
+          slug
+          image {
             childImageSharp {
-              resolutions {
+              fluid {
+                aspectRatio
+                base64
+                sizes
                 src
+                srcSet
               }
             }
           }
+          description
+          githubLink
+          liveLink
         }
       }
     }
-  }
+}
 `

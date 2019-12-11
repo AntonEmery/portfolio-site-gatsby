@@ -1,60 +1,61 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import Projects from '../components/projects'
 import Skills from '../components/skills'
+import Layout from '../components/layout'
+import { graphql } from 'gatsby'
 
 
 const IndexPage = props => {
-  const webProjects = props.data.allWordpressWpPortfolioItem.edges;
-  const projects = webProjects.map((project, index) => {
+  const projectsFromJSON = props.data.allProjectsJson.edges
+  const projects = projectsFromJSON.map((project, index) => {
     return <Projects
       key={index}
       title={project.node.title}
-      tagline={project.node.acf.tagline}
-      imageUrl={project.node.acf.imageurl.localFile.childImageSharp.resolutions.src}
-      id={project.node.wordpress_id}
+      tech={project.node.tech}
+      image={project.node.image}
+      slug={project.node.slug}
     />
   })
   return (
-  <div>
-    <p>Hi there, thanks for stopping by!</p>
+    <Layout>
+      <div>
+        <p>Hi there, thanks for stopping by!</p>
 
-    <p>I am a mostly front end web developer in Portland, Oregon. I love writing clean, resuable Javascript and think unit tests are important. I pride myself on being a friendly guy to work with, and value being on a collaborative team.</p>
-    <h2>Projects</h2>
-    <section className="projects-container">
-      {projects}
-    </section>
-    <h2>Technology I like</h2>
-    <Skills />
-  </div>
+        <p>I am a web developer living in wonderful Portland, Oregon. I have experience with a variety of front end frameworks, as well as plenty of vanilla Javascript.  I pride myself on being an easy going person to work with, and value being on a collaborative team.</p>
+        <h2>Projects</h2>
+        <p>I wish I had more time to work on cool projects after work. Below are some examples of things I have done. Check out my <a href="http://www.github.com/antonemery" target="_blank" className="text-link">Github</a>. </p>
+        <section className="projects-container">
+          {projects}
+        </section>
+        <Skills />
+      </div>
+    </Layout>
   )
 }
 
 export default IndexPage
 
-export const websiteQuery = graphql`
-  query PortfolioItem {
-    allWordpressWpPortfolioItem {
-    edges {
-     node {
-      wordpress_id
-      title
-      content
-      acf {
-        livelink
-        tagline
-        imageurl {
-          localFile {
+export const projectsQuery = graphql`
+  query MyQuery {
+    allProjectsJson {
+      edges {
+        node {
+          title
+          tech
+          slug
+          image {
             childImageSharp {
-              resolutions {
+              fluid {
+                aspectRatio
+                base64
+                sizes
                 src
+                srcSet
               }
             }
           }
         }
       }
-      }
     }
   }
-}
 `
