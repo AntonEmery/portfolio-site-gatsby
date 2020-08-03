@@ -7,7 +7,6 @@ import { graphql } from 'gatsby'
 class ProjectDetail extends Component {
   render() {
     const projectData = this.props.data.allProjectsJson.edges[0].node
-    console.log(projectData)
     return (
       <Layout>
         <div className="project-details">

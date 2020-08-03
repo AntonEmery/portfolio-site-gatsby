@@ -4,9 +4,11 @@
     "title": "Chord App",
     "image": "./chord-app.png",
     "tech": "React, Node/Express, Passport, Mongo",
-    "description": "<h3>Overview</h3><p>This project came out of that old project idea, which is to build something that solves a problem you have.  I occasionally teach online guitar lessons, and wanted some easy to send chord diagrams to students. Contrary to what you might think, there is not any software to easily do just this. So I set out to try and build my own.</p><h3>Tech</h3><p>My initial thought was to just build a front end where folks could notate chords. I was able to accomplish that drawing lines with SVGs.  Pretty cool, but the user had no ability to save anything, so why not use this app as a platform learn more things? So I moved my front end into React and added Node/Express on the backend, connected to MongoDB</p><p>After much trial and error, watching tutorials, and asking lots of questions the app now has user account creation, saving of chord sheets, and password reset. Express handles all my back end routing, and I use Passport for user authentication.</p><p>I enjoyed learning some more full stack type skills in this project, and hope to get it to a state where I can put it out into the world</p>",
+    "description": "<h3>Overview</h3><p>The idea for this project came out of trying to solve a problem I had. I occasionally teach online guitar lessons, and wanted some easy to send chord diagrams to students. Suprisingly there is not any software to easily do just this. So I set out to try and build my own. I currently have the front end deploying, and am working on finishing up the full stack application</p><h3>Tech</h3><p>My initial thought was to just build a front end where folks could notate chords. I was able to accomplish that drawing lines with SVGs.  This was useful, but the user had no ability to save anything, so why not use this app as a platform learn more things? So I moved my front end into React and added Node/Express on the backend, connected to MongoDB</p><p>After much trial and error, watching tutorials, and asking lots of questions the app now has user account creation, saving of chord sheets, and password reset. Express handles all my back end routing, and I use Passport for user authentication.</p><>I enjoyed learning some more full stack type skills in this project.",
     "slug": "chord-app",
-    "githubLink": "https://github.com/AntonEmery/chord-app"
+    "githubLink": "https://github.com/AntonEmery/chord-app",
+    "liveLink": "https://trusting-murdock-dcc7f0.netlify.app/"
+
   },
   {
     "id": "2",
